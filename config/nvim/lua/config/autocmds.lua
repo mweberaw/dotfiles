@@ -2,6 +2,16 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "BufFilePost" }, {
+--   pattern = { "*.md" },
+--   command = "setlocal syntax=pandoc",
+-- })
+vim.api.nvim_create_autocmd("filetype", {
+  -- group = augroup("wrap_spell"),
+  pattern = { "pandoc" },
+  command = "setlocal syntax=pandoc",
+})
+
 -- wrap and check for spell in text filetypes
 -- added to disable spelling
 vim.api.nvim_create_autocmd("FileType", {

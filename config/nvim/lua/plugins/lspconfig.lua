@@ -7,6 +7,7 @@ return {
       servers = {
         bashls = {},
         yamlls = {},
+        gopls = {},
         marksman = {},
         terraformls = {},
         helm_ls = {},
