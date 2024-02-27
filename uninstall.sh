@@ -14,4 +14,5 @@ restore() {
 restore ".tmux.conf"
 restore ".config/alacritty.toml"
 restore ".config/nvim"
+restore ".config/kitty"
 restore ".zprofile_common"
