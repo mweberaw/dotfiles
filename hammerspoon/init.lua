@@ -14,3 +14,15 @@ end)
 hs.hotkey.bind("ctrl-alt-cmd", "l", "Move current one screen east", function()
 	hs.window.focusedWindow():moveOneScreenEast()
 end)
+for index = 1, 8 do
+	hs.hotkey.bind(
+		"ctrl-alt-cmd",
+		string.format("%d", index),
+		string.format("Move current window to space %d", index),
+		function()
+			local currentWindow = hs.window.focusedWindow()
+			hs.spaces.moveWindowToSpace(currentWindow, hs.spaces.spacesForScreen(hs.screen.primaryScreen())[index])
+			currentWindow:focus()
+		end
+	)
+end
