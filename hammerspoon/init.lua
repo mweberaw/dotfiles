@@ -26,3 +26,13 @@ for index = 1, 8 do
 		end
 	)
 end
+hs.hotkey.bind("ctrl-alt-cmd", "left", "Split left", function()
+	local screen = hs.window.focusedWindow():screen():frame()
+	hs.window.focusedWindow():move({ x = screen.x, y = screen.y, w = math.floor(screen.w / 2), h = screen.h })
+end)
+hs.hotkey.bind("ctrl-alt-cmd", "right", "Split right", function()
+	local screen = hs.window.focusedWindow():screen():frame()
+	hs.window
+		.focusedWindow()
+		:move({ x = screen.x + math.floor(screen.w / 2), y = screen.y, w = math.floor(screen.w / 2), h = screen.h })
+end)
